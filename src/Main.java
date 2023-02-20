@@ -11,14 +11,33 @@ public class Main {
     private final static String inputFile = "src/input.txt";
 
     public static void main(String[] args) throws IOException{
-        int[] arr = fillArray(getDataFromFile(inputFile, "length"),
-                              getDataFromFile(inputFile, "min"),
-                              getDataFromFile(inputFile, "max"));
-        System.out.println(toString(arr));
-        mergeSort(arr);
-        System.out.println(toString(arr));
+
+        System.out.print(choosing());
+        int choose = scan.nextInt();
+        if (choose == 1){
+            int[] arr = fillArray(getLengthTerminal(), getMinValueTerminal(), getMaxValueTerminal());
+            System.out.println("INITIAL ARRAY: " + toString(arr));
+            mergeSort(arr);
+            System.out.println("RESULT ARRAY: "+ toString(arr));
+        } else if (choose == 2){
+            int[] arr = fillArray(getDataFromFile(inputFile, "length"),
+                    getDataFromFile(inputFile, "min"),
+                    getDataFromFile(inputFile, "max"));
+            System.out.println("INITIAL ARRAY: " + toString(arr));
+            mergeSort(arr);
+            System.out.println("RESULT ARRAY: "+ toString(arr));
+        } else {
+            System.out.println("entered uncorrected operation");
+        }
+
     }
 
+    private static String choosing(){
+        return  "\n ---OPERATION---\n" +
+                "Choose 1 to work with terminal:\n" +
+                "Choose 2 to work with file:\n" +
+                "Your choosing is: ";
+    }
     private static String toString(int[] array) {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
