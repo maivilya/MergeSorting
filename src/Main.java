@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -33,10 +32,12 @@ public class Main {
     }
 
     private static String choosing(){
-        return  "\n ---OPERATION---\n" +
-                "Choose 1 to work with terminal:\n" +
-                "Choose 2 to work with file:\n" +
-                "Your choosing is: ";
+        return """
+
+                 ---OPERATION---
+                Choose 1 to work with terminal:
+                Choose 2 to work with file:
+                Your choosing is:\s""";
     }
     private static String toString(int[] array) {
         StringBuilder sb = new StringBuilder();
