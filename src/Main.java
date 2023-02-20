@@ -11,6 +11,10 @@ public class Main {
     private final static String inputFile = "src/input.txt";
 
     public static void main(String[] args) throws IOException{
+        int[] arr = fillArray(getLengthTerminal(), getMinValueTerminal(), getMaxValueTerminal());
+        System.out.println(toString(arr));
+        mergeSort(arr);
+        System.out.println(toString(arr));
     }
 
     private static String toString(int[] array) {
