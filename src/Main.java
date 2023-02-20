@@ -11,7 +11,9 @@ public class Main {
     private final static String inputFile = "src/input.txt";
 
     public static void main(String[] args) throws IOException{
-        int[] arr = fillArray(getLengthTerminal(), getMinValueTerminal(), getMaxValueTerminal());
+        int[] arr = fillArray(getDataFromFile(inputFile, "length"),
+                              getDataFromFile(inputFile, "min"),
+                              getDataFromFile(inputFile, "max"));
         System.out.println(toString(arr));
         mergeSort(arr);
         System.out.println(toString(arr));
