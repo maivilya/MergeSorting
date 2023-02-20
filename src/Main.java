@@ -13,10 +13,20 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
 
-        System.out.println(getDataFromFile(inputFile, "length"));
+    }
 
-        /*int[] array = fillArray(getLengthTerminal(), getMinValueTerminal(), getMaxValueTerminal());
-        System.out.println(Arrays.toString(array));*/
+    private static String toString(int[] array){
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        int length = array.length;
+        for(int i = 0; i < length; i++){
+            if (i < (length - 1)){
+                sb.append(String.format("%d, ", array[i]));
+            } else {
+                sb.append(String.format("%d]", array[i]));
+            }
+        }
+        return sb.toString();
     }
 
     private static int getDataFromFile(String inputFileName, String value) throws IOException {
